@@ -7,6 +7,7 @@
     scan
     look_for_neighbours
     fits_in_boundaries
+    dequeue
     AUTHOR OSKAR KORGUL
 """
 import numpy
@@ -99,4 +100,11 @@ def fits_in_boundaries(size:int,position:int):
     """
     return position >= 0 and position < size
 
-        
+def dequeue(queue:list,index:int):
+    """
+    Takes out element with given element from queue.
+    :param queue: List.
+    :param index: Int
+    :return:NONE
+    """
+    del queue[index]

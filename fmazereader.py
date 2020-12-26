@@ -35,7 +35,6 @@ def convert_to_array(maze):
     rows = maze.count('\n') + 1
     array = numpy.zeros((rows,columns), dtype=object)
     it = 0
-    print(len(maze),'\t',rows,'\t', columns)
     for x in range(rows):
         for y in range(columns):
             if maze[it] == '\n':

@@ -3,7 +3,6 @@
     BREADTH FIRST SEARCH ALGORITHM
     contents:
     bfs
-    dequeue
     backtrack
     AUTHOR OSKAR KORGUL
 """
@@ -38,15 +37,6 @@ def bfs(graph:dict,start:tuple,goal:tuple,visited:dict=None,queue:list=None):
     if current == start:
         return backtrack(visited,start,goal)
 
-    
-def dequeue(queue:list,index:int):
-    """
-    Takes out element with given element from queue.
-    :param queue: List.
-    :param index: Int
-    :return:NONE
-    """
-    del queue[index]
     
 def backtrack(graph:dict,start:tuple,goal:tuple):
     """
