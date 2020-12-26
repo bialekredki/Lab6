@@ -1,5 +1,5 @@
 import numpy
-import maze2graph
+import mazeutils
 import bfs
 import astar
 import fmazereader
@@ -25,12 +25,12 @@ def solve_maze(method='bfs'):
         if m is None:
             continue
         print("Original : ",'\n',m)
-        start, goal = maze2graph.scan(m)
-        graph = maze2graph.convert_maze_to_graph(m)
+        start, goal = mazeutils.scan(m)
+        graph = mazeutils.convert_maze_to_graph(m)
         path_bfs = bfs.bfs(graph,start,goal)
-        solved_bfs = maze2graph.mark_path(m,path_bfs)
+        solved_bfs = mazeutils.mark_path(m, path_bfs)
         path_astar = astar.search(graph,start,goal,1)
-        solved_astar = maze2graph.mark_path(m,path_astar)
+        solved_astar = mazeutils.mark_path(m, path_astar)
         for x in range(3):
             print('\n')
         print("Solved using Breadth-First-Search : ",'\n',solved_bfs)

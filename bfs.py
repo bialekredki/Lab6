@@ -7,6 +7,8 @@
     AUTHOR OSKAR KORGUL
 """
 
+import mazeutils
+
 def bfs(graph:dict,start:tuple,goal:tuple,visited:dict=None,queue:list=None):
     """
     BFS algorithm for solving maze
@@ -21,7 +23,7 @@ def bfs(graph:dict,start:tuple,goal:tuple,visited:dict=None,queue:list=None):
         visited = {}
         queue = [start]
     current = queue[0]
-    dequeue(queue,0)
+    mazeutils.dequeue(queue, 0)
     if len(visited) == 0:
         visited[current] = None
     for n in graph[current]:
@@ -37,7 +39,7 @@ def bfs(graph:dict,start:tuple,goal:tuple,visited:dict=None,queue:list=None):
     if current == start:
         return backtrack(visited,start,goal)
 
-    
+
 def backtrack(graph:dict,start:tuple,goal:tuple):
     """
     Creates path from given graph of connections between visited nodes.
@@ -52,5 +54,5 @@ def backtrack(graph:dict,start:tuple,goal:tuple):
         goal = graph[goal]
         if goal == start:
             break
-    del path[0]
+    mazeutils.dequeue(0)
     return path
